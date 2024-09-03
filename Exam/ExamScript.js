@@ -1,5 +1,5 @@
 class Exam {
-  //questions => [[Qs],[As]], username as identifier
+  //questions => [{Qs,Cs,As}] array of objects/dictionaries Cs=>array
   constructor(userName, questions) {
     this.userName = userName;
     this.questions = questions;
@@ -65,9 +65,6 @@ class Exam {
     //display logic here
   }
 }
-let user = new Exam("om", []);
-const database = json();
-
 //use this design later
 // Array to hold all the questions, answers, and the correct answer
 let examQuestions = [
@@ -88,26 +85,26 @@ let examQuestions = [
   },
 ];
 
-// Function to display a question and its options
-function displayQuestion(index) {
-  let currentQuestion = examQuestions[index];
-  console.log(currentQuestion.question);
-  currentQuestion.options.forEach((option, i) => {
-    console.log(`${i + 1}. ${option}`);
-  });
-}
+// // Function to display a question and its options
+// function displayQuestion(index) {
+//   let currentQuestion = examQuestions[index];
+//   console.log(currentQuestion.question);
+//   currentQuestion.options.forEach((option, i) => {
+//     console.log(`${i + 1}. ${option}`);
+//   });
+// }
 
-// Function to check if the selected answer is correct
-function checkAnswer(index, selectedOption) {
-  let currentQuestion = examQuestions[index];
-  return currentQuestion.correctAnswer === selectedOption;
-}
+// // Function to check if the selected answer is correct
+// function checkAnswer(index, selectedOption) {
+//   let currentQuestion = examQuestions[index];
+//   return currentQuestion.correctAnswer === selectedOption;
+// }
 
-// Example of usage
-displayQuestion(0); // Displays the first question and its options
-let userAnswer = 2; // Let's say the user selects the third option
-if (checkAnswer(0, userAnswer - 1)) {
-  console.log("Correct!");
-} else {
-  console.log("Wrong answer.");
-}
+// // Example of usage
+// displayQuestion(0); // Displays the first question and its options
+// let userAnswer = 2; // Let's say the user selects the third option
+// if (checkAnswer(0, userAnswer - 1)) {
+//   console.log("Correct!");
+// } else {
+//   console.log("Wrong answer.");
+// }
