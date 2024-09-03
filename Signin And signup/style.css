@@ -153,4 +153,14 @@ form .input label{
 
 .image img{
     width: 120%;
+    filter: grayscale(85%);
+}
+.done{
+    background-color: green;
+}
+
+.container .page-2 .header .line-1 .two:before,
+.container .page-3 .header .line-1 .two:before,
+.container .page-3 .header .line-2 .two:before{
+    background-color: red;
 }
