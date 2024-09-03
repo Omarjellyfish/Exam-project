@@ -60,8 +60,9 @@ class Exam {
   }
 
   calculateResult() {
+    this.result = 0;
     for (let i = 0; i < this.questions.length; i++) {
-      if (this.userAnswers[i] == this.questions[i][correctAnswer]) {
+      if (this.userAnswers[i] == this.questions[i]["correctAnswer"]) {
         this.result += 1;
       }
     }
@@ -74,6 +75,7 @@ class Exam {
   displayResult() {
     this.calculateResult();
     //display this.result
+    console.log(this.result);
   }
 
   timeLimit(timeoutSeconds) {
@@ -171,9 +173,10 @@ let examQuestions = [
 
 user = new Exam("omarkandil", examQuestions);
 
-const next_btn = document.getElementById("next");
-const prev_btn = document.getElementById("prev");
-const flag_btn = document.getElementById("mark");
+const submit = document.getElementById("submit");
+submit.addEventListener("click", () => {
+  user.stopExam();
+});
 
 const a1 = document.getElementById("a1");
 const a2 = document.getElementById("a2");
@@ -193,6 +196,9 @@ a4.addEventListener("click", () => {
   user.selectAnswer("a4");
 });
 
+const next_btn = document.getElementById("next");
+const prev_btn = document.getElementById("prev");
+const flag_btn = document.getElementById("mark");
 next_btn.addEventListener("click", () => {
   user.getNextQuestion();
 });
