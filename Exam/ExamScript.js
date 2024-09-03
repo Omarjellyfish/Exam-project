@@ -5,7 +5,7 @@ class Exam {
     this.userName = userName;
     this.questions = questions;
     this.currentQuestion = 0;
-    this.userAnswers = []; //array of text
+    this.userAnswers = [""] * this.questions.length; //array of text
     this.result = 0;
     this.maxResult = this.questions[1].length;
     this.timeLimit(100, this.stopExam);
@@ -33,7 +33,7 @@ class Exam {
 
   calculateResult() {
     for (let i = 0; i < this.questions.length; i++) {
-      if (this.userAnswers[i] == this.questions[correctAnswer]) {
+      if (this.userAnswers[i] == this.questions[i][correctAnswer]) {
         this.result += 1;
       }
     }
@@ -67,8 +67,8 @@ class Exam {
     //display logic here
   }
   selectAnswer() {
-    ans = document.getElementById();
-    this.userAnswers.push(ans);
+    ans = document.getElementById("selection_id").innerText;
+    this.userAnswers[this.currentQuestion] = ans;
   }
 }
 //use this design later
