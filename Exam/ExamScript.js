@@ -5,11 +5,12 @@ class Exam {
     this.userName = userName;
     this.questions = questions;
     this.currentQuestion = 0;
-    this.userAnswers = [""] * this.questions.length; //array of text
+    this.userAnswers = new Array(this.questions.length); //array of text
+    console.log(this.userAnswers, "hello from useranswers");
     this.result = 0;
     this.maxResult = this.questions[1].length;
     this.timeLimit(100, this.stopExam);
-    this.markedQuestion = [];
+    this.markedQuestion = new Set();
     this.displayuser();
     this.userImage_path = userImage_path;
     this.displayQuestion();
@@ -29,10 +30,10 @@ class Exam {
   }
   displayQuestion() {
     console.log(this.currentQuestion);
-    let curQ = this.questions[this.currentQuestion]["question"];
+    const curQ = this.questions[this.currentQuestion]["question"];
     console.log(curQ);
-    //updating html display logic
-    // choices = this.questions[this.currentQuestion][options];
+
+    // Update question and choices
     document.getElementById("Q").innerText = `Question ${
       this.currentQuestion + 1
     }`;
@@ -45,6 +46,17 @@ class Exam {
       this.questions[this.currentQuestion]["options"][2];
     document.getElementById("a4").innerText =
       this.questions[this.currentQuestion]["options"][3];
+
+    // Highlight the selected answer
+    const selectedAnswer = this.userAnswers[this.currentQuestion];
+    const allButtons = document.querySelectorAll("#answers .ans");
+    allButtons.forEach((button) => {
+      if (button.innerText === selectedAnswer) {
+        button.classList.add("selected");
+      } else {
+        button.classList.remove("selected");
+      }
+    });
   }
 
   calculateResult() {
@@ -90,12 +102,45 @@ class Exam {
   }
 
   addMarkedQuestion() {
-    this.markedQuestion.append(this.currentQuestion);
-    //display logic here
+    const flaggedQuestionsContainer =
+      document.getElementById("flagged-questions");
+    const existingSection = document.getElementById(
+      `question-${this.currentQuestion}`
+    );
+
+    if (this.markedQuestion.has(this.currentQuestion)) {
+      // Unflag: remove the section
+      this.markedQuestion.delete(this.currentQuestion);
+      if (existingSection) {
+        flaggedQuestionsContainer.removeChild(existingSection);
+      }
+    } else {
+      // Flag: add the question to the set and create a new section
+      this.markedQuestion.add(this.currentQuestion);
+
+      // Create a new section element
+      const newSection = document.createElement("section");
+      newSection.className = "flagged-q";
+      newSection.id = `question-${this.currentQuestion}`; // Unique ID
+      newSection.innerText = `Question ${this.currentQuestion + 1}`;
+
+      // Append the new section to the flagged questions container
+      flaggedQuestionsContainer.appendChild(newSection);
+    }
   }
-  selectAnswer() {
-    ans = document.getElementById("selection_id").innerText;
-    this.userAnswers[this.currentQuestion] = ans;
+  selectAnswer(ans_id) {
+    const ans = document.getElementById(ans_id);
+
+    // Save the answer for the current question
+    this.userAnswers[this.currentQuestion] = ans.innerText;
+    console.log(this.userAnswers);
+
+    // Remove 'selected' class from all answer buttons
+    const allButtons = document.querySelectorAll("#answers .ans");
+    allButtons.forEach((button) => button.classList.remove("selected"));
+
+    // Add 'selected' class to the clicked button
+    ans.classList.add("selected");
   }
 }
 
@@ -119,36 +164,38 @@ let examQuestions = [
   },
 ];
 
-// // Function to display a question and its options
-// function displayQuestion(index) {
-//   let currentQuestion = examQuestions[index];
-//   console.log(currentQuestion.question);
-//   currentQuestion.options.forEach((option, i) => {
-//     console.log(`${i + 1}. ${option}`);
-//   });
-// }
-
-// // Function to check if the selected answer is correct
-// function checkAnswer(index, selectedOption) {
-//   let currentQuestion = examQuestions[index];
-//   return currentQuestion.correctAnswer === selectedOption;
-// }
-
-// // Example of usage
-// displayQuestion(0); // Displays the first question and its options
-// let userAnswer = 2; // Let's say the user selects the third option
-// if (checkAnswer(0, userAnswer - 1)) {
-//   console.log("Correct!");
-// } else {
-//   console.log("Wrong answer.");
-// }
-
 user = new Exam("omarkandil", examQuestions);
+
 const next_btn = document.getElementById("next");
 const prev_btn = document.getElementById("prev");
+const flag_btn = document.getElementById("mark");
+
+const a1 = document.getElementById("a1");
+const a2 = document.getElementById("a2");
+const a3 = document.getElementById("a3");
+const a4 = document.getElementById("a4");
+
+a1.addEventListener("click", () => {
+  user.selectAnswer("a1");
+});
+a2.addEventListener("click", () => {
+  user.selectAnswer("a2");
+});
+a3.addEventListener("click", () => {
+  user.selectAnswer("a3");
+});
+a4.addEventListener("click", () => {
+  user.selectAnswer("a4");
+});
+
 next_btn.addEventListener("click", () => {
   user.getNextQuestion();
 });
+
 prev_btn.addEventListener("click", () => {
   user.getPrevQuestion();
+});
+
+flag_btn.addEventListener("click", () => {
+  user.addMarkedQuestion();
 });
