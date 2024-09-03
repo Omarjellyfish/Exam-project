@@ -119,10 +119,15 @@ class Exam {
       this.markedQuestion.add(this.currentQuestion);
 
       // Create a new section element
-      const newSection = document.createElement("section");
+      const newSection = document.createElement("button");
       newSection.className = "flagged-q";
       newSection.id = `question-${this.currentQuestion}`; // Unique ID
       newSection.innerText = `Question ${this.currentQuestion + 1}`;
+      newSection.addEventListener("click", () => {
+        const text = newSection.innerText;
+        this.currentQuestion = parseInt(text.match(/\d+/)[0] - 1, 10); //regex to get number
+        this.displayQuestion();
+      });
 
       // Append the new section to the flagged questions container
       flaggedQuestionsContainer.appendChild(newSection);
