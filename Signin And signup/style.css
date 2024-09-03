@@ -7,19 +7,18 @@
 body{
     display:flex;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    background-color: #Fff;
+    background-color: #ffffff;
+    justify-content: space-evenly;
 }
 .container{
     display: flex;
     position: relative;
-    width: 70vw;
+    width: 46vw;
     height: 80vh;
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 4px 20px 0 rgba(0 , 0 , 0 ,0.3),0 6px 20px 0 rgba(0 , 0 , 0 ,0.3);
-    overflow: hidden;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, -1.7), 0 6px 23px 0 rgba(0, 0, 0, 0.3);    overflow: hidden;
 }
 .signin-signup{
     position: absolute;
@@ -55,7 +54,7 @@ form{
 
 .container .header .circles{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .container .header .circle{
     display: flex;
@@ -68,17 +67,34 @@ form{
     font-weight: 600;
 }
 .container .header .circle .two{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 1px solid #4e4a4a;
     text-align: center;
     border-radius: 50%;
     outline: 2px solid #b29f9f;
     background-color: #333333;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
 }
-.container .header .line::before{
-    
+.container .header .line-1 .two:before{
+    content: " ";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+    left: 58px;
+}
+.container .header .line-2 .two:before{
+    content: " ";
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background-color: #333;
+    left: 123px;
 }
 form .input{
     display: flex;
@@ -133,4 +149,8 @@ form .input label{
 }
 .btn:hover{
     background-color: #424142;
+}
+
+.image img{
+    width: 120%;
 }
