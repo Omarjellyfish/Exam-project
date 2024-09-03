@@ -11,13 +11,14 @@ class Exam {
     this.maxResult = this.questions[1].length;
     this.timeLimit(100, this.stopExam);
     this.markedQuestion = new Set();
-    this.displayuser();
     this.userImage_path = userImage_path;
+    this.displayuser();
     this.displayQuestion();
   }
   displayuser() {
     //display logic
     document.getElementById("userName").innerText = this.userName;
+    console.log(this.userImage_path);
     document.getElementById("userImage").src = this.userImage_path;
   }
   getNextQuestion() {
@@ -167,82 +168,64 @@ class Exam {
 
 //all this should be moved into an independent file
 
-//use this design later
-// Array to hold all the questions, answers, and the correct answer
-let examQuestions = [
-  {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Madrid", "Paris", "Rome"],
-    correctAnswer: "Paris",
-  },
-  {
-    question: "What is 2 + 2?",
-    options: ["3", "4", "5", "6"],
-    correctAnswer: "4",
-  },
-  {
-    question: "Which of these is a fruit?",
-    options: ["Carrot", "Potato", "Apple", "Broccoli"],
-    correctAnswer: "Apple",
-  },
-  {
-    question: "What is the chemical symbol for water?",
-    options: ["O2", "H2O", "CO2", "NaCl"],
-    correctAnswer: "H2O",
-  },
-  {
-    question: "Who wrote 'Romeo and Juliet'?",
-    options: [
-      "William Shakespeare",
-      "Charles Dickens",
-      "Mark Twain",
-      "Jane Austen",
-    ],
-    correctAnswer: "William Shakespeare",
-  },
-  {
-    question: "What planet is known as the Red Planet?",
-    options: ["Earth", "Mars", "Jupiter", "Venus"],
-    correctAnswer: "Mars",
-  },
-  {
-    question: "What is the largest ocean on Earth?",
-    options: [
-      "Atlantic Ocean",
-      "Indian Ocean",
-      "Arctic Ocean",
-      "Pacific Ocean",
-    ],
-    correctAnswer: "Pacific Ocean",
-  },
-  {
-    question: "Who painted the Mona Lisa?",
-    options: [
-      "Vincent van Gogh",
-      "Pablo Picasso",
-      "Leonardo da Vinci",
-      "Claude Monet",
-    ],
-    correctAnswer: "Leonardo da Vinci",
-  },
-  {
-    question: "Which element has the atomic number 1?",
-    options: ["Oxygen", "Helium", "Hydrogen", "Carbon"],
-    correctAnswer: "Hydrogen",
-  },
-  {
-    question: "In what year did the Titanic sink?",
-    options: ["1905", "1912", "1920", "1935"],
-    correctAnswer: "1912",
-  },
-];
+//start===>) make this into an independtent file called Question fetching and organizing
+// Creating a function to fetch teh questions and parse
+async function loadExamQuestions() {
+  try {
+    const response = await fetch("examQuestion.json"); // Path to your JSON file
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const examQs = await response.json(); // Parse JSON data
+    return examQs;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    displayErrorPage();
+  }
+}
 
+// Function to display the error page
+function displayErrorPage() {
+  // Create the error page content
+  const errorPage = document.createElement("div");
+  errorPage.id = "error-page";
+  errorPage.innerHTML = `
+    <h1>Error</h1>
+    <h2>Sorry, we couldn't load the exam questions. Please try again later.</h2>
+  `;
+
+  // Append the error page content to the body
+  document.body.appendChild(errorPage);
+
+  // Optionally, hide other content
+  document.getElementById("landing-page").classList.add("hidden");
+  document.getElementById("exam").classList.add("hidden");
+}
+
+// Function to shuffle an array using Fisher-Yates algorithm thanks gpt
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+}
+
+//  ===>) this the end of what should be another class/independent file?
+
+//main file to run the code and import all the required modules
 //get started
 const getStarted = document.getElementById("getStarted");
 getStarted.addEventListener("click", () => {
-  user = new Exam("omarkandil", examQuestions);
-  document.getElementById("landing-page").classList.add("hidden");
-  document.getElementById("exam").classList.remove("hidden");
+  loadExamQuestions().then((examQs) => {
+    if (examQs) {
+      // Initialize your Exam object with the fetched questions
+      shuffleArray(examQs);
+      user = new Exam("omarkandil", examQs, "userImage.jpg"); //get username and userImage using local storage or pathing?
+      document.getElementById("landing-page").classList.add("hidden");
+      document.getElementById("exam").classList.remove("hidden");
+    }
+  });
 });
 
 const submit = document.getElementById("submit");
