@@ -36,6 +36,14 @@ class Exam {
       this.currentQuestion + 1
     }`;
     document.getElementById("Q-text").innerText = curQ;
+    document.getElementById("a1").innerText =
+      this.questions[this.currentQuestion]["options"][0];
+    document.getElementById("a2").innerText =
+      this.questions[this.currentQuestion]["options"][1];
+    document.getElementById("a3").innerText =
+      this.questions[this.currentQuestion]["options"][2];
+    document.getElementById("a4").innerText =
+      this.questions[this.currentQuestion]["options"][3];
   }
 
   calculateResult() {
