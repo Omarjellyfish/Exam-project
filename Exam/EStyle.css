@@ -160,3 +160,6 @@ p{
     background-color: rgb(166, 207, 104);
     color: white; /* Example: white text */
 }
+.hidden{
+    display: none;
+}

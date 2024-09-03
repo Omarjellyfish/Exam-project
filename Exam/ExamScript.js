@@ -21,14 +21,28 @@ class Exam {
     document.getElementById("userImage").src = this.userImage_path;
   }
   getNextQuestion() {
-    this.currentQuestion += 1;
-    this.displayQuestion();
+    if (this.currentQuestion < this.questions.length - 1) {
+      this.currentQuestion += 1;
+      this.displayQuestion();
+    }
   }
   getPrevQuestion() {
-    this.currentQuestion -= 1;
-    this.displayQuestion();
+    if (this.currentQuestion > 0) {
+      this.currentQuestion -= 1;
+      this.displayQuestion();
+    }
   }
   displayQuestion() {
+    if (this.currentQuestion == this.questions.length - 1) {
+      document.getElementById("next").classList.add("hidden");
+    } else {
+      document.getElementById("next").classList.remove("hidden");
+    }
+    if (this.currentQuestion == 0) {
+      document.getElementById("prev").classList.add("hidden");
+    } else {
+      document.getElementById("prev").classList.remove("hidden");
+    }
     console.log(this.currentQuestion);
     const curQ = this.questions[this.currentQuestion]["question"];
     console.log(curQ);
@@ -74,7 +88,7 @@ class Exam {
 
   displayResult() {
     this.calculateResult();
-    //display this.result
+    //display this.result go to score page
     console.log(this.result);
   }
 
