@@ -1,10 +1,11 @@
 class Exam {
-  //questions => [[Qs],[As]], username as identifier
+  //questions => [...{Qs,Cs,As}] array of objects/dictionaries Cs=>array
+  //Qs,As=>Text
   constructor(userName, questions) {
     this.userName = userName;
     this.questions = questions;
     this.currentQuestion = 0;
-    this.userAnswers = [];
+    this.userAnswers = [""] * this.questions.length; //array of text
     this.result = 0;
     this.maxResult = this.questions[1].length;
     this.timeLimit(100, this.stopExam);
@@ -24,14 +25,15 @@ class Exam {
     this.displayQuestion();
   }
   displayQuestion() {
-    curQ = this.questions[currentQuestion];
+    curQ = this.questions[currentQuestion][question];
     //updating html display logic
+    choices = this.questions[this.currentQuestion][options];
     document.getElementById("Q-text").innerHTML = curQ;
   }
 
   calculateResult() {
-    for (let i = 0; i < this.questions[1].length; i++) {
-      if (this.userAnswers[i] == questions[1][i]) {
+    for (let i = 0; i < this.questions.length; i++) {
+      if (this.userAnswers[i] == this.questions[i][correctAnswer]) {
         this.result += 1;
       }
     }
@@ -64,50 +66,51 @@ class Exam {
     this.markedQuestion.append(this.currentQuestion);
     //display logic here
   }
+  selectAnswer() {
+    ans = document.getElementById("selection_id").innerText;
+    this.userAnswers[this.currentQuestion] = ans;
+  }
 }
-let user = new Exam("om", []);
-const database = json();
-
 //use this design later
 // Array to hold all the questions, answers, and the correct answer
 let examQuestions = [
   {
     question: "What is the capital of France?",
     options: ["Berlin", "Madrid", "Paris", "Rome"],
-    correctAnswer: 2, // index of the correct answer in the options array
+    correctAnswer: "Paris", // index of the correct answer in the options array
   },
   {
     question: "What is 2 + 2?",
     options: ["3", "4", "5", "6"],
-    correctAnswer: 1,
+    correctAnswer: "4",
   },
   {
     question: "Which of these is a fruit?",
     options: ["Carrot", "Potato", "Apple", "Broccoli"],
-    correctAnswer: 2,
+    correctAnswer: "Apple",
   },
 ];
 
-// Function to display a question and its options
-function displayQuestion(index) {
-  let currentQuestion = examQuestions[index];
-  console.log(currentQuestion.question);
-  currentQuestion.options.forEach((option, i) => {
-    console.log(`${i + 1}. ${option}`);
-  });
-}
+// // Function to display a question and its options
+// function displayQuestion(index) {
+//   let currentQuestion = examQuestions[index];
+//   console.log(currentQuestion.question);
+//   currentQuestion.options.forEach((option, i) => {
+//     console.log(`${i + 1}. ${option}`);
+//   });
+// }
 
-// Function to check if the selected answer is correct
-function checkAnswer(index, selectedOption) {
-  let currentQuestion = examQuestions[index];
-  return currentQuestion.correctAnswer === selectedOption;
-}
+// // Function to check if the selected answer is correct
+// function checkAnswer(index, selectedOption) {
+//   let currentQuestion = examQuestions[index];
+//   return currentQuestion.correctAnswer === selectedOption;
+// }
 
-// Example of usage
-displayQuestion(0); // Displays the first question and its options
-let userAnswer = 2; // Let's say the user selects the third option
-if (checkAnswer(0, userAnswer - 1)) {
-  console.log("Correct!");
-} else {
-  console.log("Wrong answer.");
-}
+// // Example of usage
+// displayQuestion(0); // Displays the first question and its options
+// let userAnswer = 2; // Let's say the user selects the third option
+// if (checkAnswer(0, userAnswer - 1)) {
+//   console.log("Correct!");
+// } else {
+//   console.log("Wrong answer.");
+// }
