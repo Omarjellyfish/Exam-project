@@ -26,3 +26,5 @@ regester.addEventListener("click", () => {
   panels_container.style.cssText = `left:-50%`;
   signin_signup.style.cssText = `left:-473px`;
 });
+
+// --------------------------------------------------
