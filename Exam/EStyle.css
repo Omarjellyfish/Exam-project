@@ -156,3 +156,7 @@ p{
     color: red;
     padding: 5px 5px 2px 2px;
 }
+.selected {
+    background-color: rgb(166, 207, 104);
+    color: white; /* Example: white text */
+}
