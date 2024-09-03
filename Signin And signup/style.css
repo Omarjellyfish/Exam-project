@@ -29,7 +29,7 @@ body{
     background: #565f6c;
     z-index: 6;
     left: 50%; 
-    transform: translateX(0%);
+
     transition: 1s ease-in-out;
 }
 .signin-signup{
@@ -223,5 +223,15 @@ form .input label{
     left: -251px;
 }
 .end_done{
-    left: -560px;
+    left: -550px;
+}
+.container.sign_up_mode::before{
+    left: -50%;
+}
+
+.page-4 label{
+    margin: 15px 0;
+}
+.page-4 i{
+    font-size: 24px;
 }
