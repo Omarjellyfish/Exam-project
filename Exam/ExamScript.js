@@ -12,6 +12,7 @@ class Exam {
     this.markedQuestion = [];
     this.displayuser();
     this.userImage_path = userImage_path;
+    this.displayQuestion();
   }
   displayuser() {
     //display logic
