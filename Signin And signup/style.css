@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #Fff;
+}
+.container{
+    display: flex;
+    position: relative;
+    width: 70vw;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0 , 0 , 0 ,0.3),0 6px 20px 0 rgba(0 , 0 , 0 ,0.3);
+    overflow: hidden;
+}
+.signin-signup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    min-width: 238px;
+    padding: 0 10px;
+}
+.container .page-1 .header{
+    position: relative;
+    top: -100px;
+}
+.container .page-2 .header,
+.container .page-3 .header{
+    position: relative;
+    top: -76px;
+}
+
+.container .header .circles{
+    display: flex;
+    justify-content: space-between;
+}
+.container .header .circle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .header .circle .one{
+    font-size: 16px;
+    font-weight: 600;
+}
+.container .header .circle .two{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #4e4a4a;
+    text-align: center;
+    border-radius: 50%;
+    outline: 2px solid #b29f9f;
+    background-color: #333333;
+    color: #fff;
+}
+.container .header .line::before{
+    
+}
+form .input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+form .input label{
+    font-size: 20px;
+    color: #aba5a5;
+    letter-spacing: 1.1px;
+}
+
+.input-faild{
+    width: 100%;
+    height: 39px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.input-faild i{
+    flex: 1;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+
+}
+.input-faild input{
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-weight: 600;
+    color: #444;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 135px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background-color: #919aaf;
+    color: #eee;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #424142;
+}

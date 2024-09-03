@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Signin And Signup</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <div class="page-1">
+                <div class="header">
+                    <div class="circles">
+                        <div class="circle line">
+                            <span class="one">Name</span>
+                            <span class="two">1</span>
+                        </div>
+                        <div class="circle line">
+                            <span class="one">Email</span>
+                            <span class="two">2</span>
+                        </div>
+                        <div class="circle">
+                            <span class="one">Password</span>
+                            <span class="two">3</span>
+                        </div>
+                    </div>
+                </div>
+                <form action="#">
+                    <div class="input">
+                        <label for="Fname">First Name</label>
+                        <div class="input-faild">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="Fname" >
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="Lname">Last Name</label>
+                        <div class="input-faild">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="Lname">
+                        </div>
+                    </div>
+                    <input type="submit" value="Next" class="btn">
+                </form>
+            </div>
+            <div class="page-2">
+                <div class="header">
+                    <div class="circles">
+                        <div class="circle">
+                            <span class="one">Name</span>
+                            <span class="two">1</span>
+                        </div>
+                        <div class="circle">
+                            <span class="one">Email</span>
+                            <span class="two">2</span>
+                        </div>
+                        <div class="circle">
+                            <span class="one">Password</span>
+                            <span class="two">3</span>
+                        </div>
+                    </div>
+                </div>
+                <form action="#">
+                    <div class="input">
+                        <label for="email">Email</label>
+                        <div class="input-faild">
+                            <i class='bx bxs-envelope' ></i>
+                            <input type="email" id="email" >
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="image">image</label>
+                        <div class="input-faild">
+                            <i class='bx bxs-image' ></i>
+                            <input type="file" id="image">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" value="NEXt" class="btn">
+                        <input type="submit" value="PREVIOUS" class="btn">
+                    </div>
+                </form>
+            </div>
+            <div class="page-3">
+                <div class="header">
+                    <div class="circles">
+                        <div class="circle">
+                            <span class="one">Name</span>
+                            <span class="two">1</span>
+                        </div>
+                        <div class="circle">
+                            <span class="one">Email</span>
+                            <span class="two">2</span>
+                        </div>
+                        <div class="circle">
+                            <span class="one">Password</span>
+                            <span class="two">3</span>
+                        </div>
+                    </div>
+                </div>
+                <form action="#">
+                    <div class="input">
+                        <label for="password">Password</label>
+                        <div class="input-faild">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" >
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="re-password">Re-enter Password</label>
+                        <div class="input-faild">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="re-password">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" value="REGISTER" class="btn">
+                        <input type="submit" value="PREVIOUS" class="btn">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
