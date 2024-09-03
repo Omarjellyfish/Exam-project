@@ -1,7 +1,7 @@
 class Exam {
   //questions => [...{Qs,Cs,As}] array of objects/dictionaries Cs=>array
   //Qs,As=>Text
-  constructor(userName, questions) {
+  constructor(userName, questions, userImage_path) {
     this.userName = userName;
     this.questions = questions;
     this.currentQuestion = 0;
@@ -11,10 +11,12 @@ class Exam {
     this.timeLimit(100, this.stopExam);
     this.markedQuestion = [];
     this.displayuser();
+    this.userImage_path = userImage_path;
   }
   displayuser() {
     //display logic
-    this.userName;
+    document.getElementById("userName").innerText = this.userName;
+    document.getElementById("userImage").src = this.userImage_path;
   }
   getNextQuestion() {
     this.currentQuestion += 1;
@@ -25,10 +27,15 @@ class Exam {
     this.displayQuestion();
   }
   displayQuestion() {
-    curQ = this.questions[currentQuestion][question];
+    console.log(this.currentQuestion);
+    let curQ = this.questions[this.currentQuestion]["question"];
+    console.log(curQ);
     //updating html display logic
-    choices = this.questions[this.currentQuestion][options];
-    document.getElementById("Q-text").innerHTML = curQ;
+    // choices = this.questions[this.currentQuestion][options];
+    document.getElementById("Q").innerText = `Question ${
+      this.currentQuestion + 1
+    }`;
+    document.getElementById("Q-text").innerText = curQ;
   }
 
   calculateResult() {
@@ -49,17 +56,28 @@ class Exam {
   }
 
   timeLimit(timeoutSeconds) {
-    const startTime = new Date().getTime();
+    const endTime = new Date().getTime() + timeoutSeconds * 1000;
 
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
-      const elapsedTime = currentTime - startTime;
+      const remainingTime = Math.max(endTime - currentTime, 0); // Ensure non-negative time
 
-      if (elapsedTime >= timeoutSeconds * 1000) {
+      // Calculate minutes and seconds
+      const minutes = Math.floor(remainingTime / 60000);
+      const seconds = Math.floor((remainingTime % 60000) / 1000);
+
+      // Format time to display as MM:SS
+      const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+      // Display the time on the webpage
+      document.getElementById("timer").innerText = formattedTime;
+
+      if (remainingTime <= 0) {
         clearInterval(interval);
         this.stopExam();
+        document.getElementById("timer").innerText = "0:00"; // Ensure it shows 0:00 when time is up
       }
-    }, 100); // Adjust the interval as needed for accuracy
+    }, 250); // Adjusting the interval to 250ms for more frequent updates
   }
 
   addMarkedQuestion() {
@@ -71,6 +89,7 @@ class Exam {
     this.userAnswers[this.currentQuestion] = ans;
   }
 }
+
 //use this design later
 // Array to hold all the questions, answers, and the correct answer
 let examQuestions = [
@@ -114,3 +133,13 @@ let examQuestions = [
 // } else {
 //   console.log("Wrong answer.");
 // }
+
+user = new Exam("omarkandil", examQuestions);
+const next_btn = document.getElementById("next");
+const prev_btn = document.getElementById("prev");
+next_btn.addEventListener("click", () => {
+  user.getNextQuestion();
+});
+prev_btn.addEventListener("click", () => {
+  user.getPrevQuestion();
+});

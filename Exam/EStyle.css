@@ -149,3 +149,10 @@ p{
     color: black;
     margin: 10px;
 }
+#timer{
+    border-radius: 5px;
+    border: solid black 1px;
+    background-color: #4e4e9e;
+    color: red;
+    padding: 5px 5px 2px 2px;
+}
