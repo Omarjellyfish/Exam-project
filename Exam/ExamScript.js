@@ -1,10 +1,11 @@
 class Exam {
-  //questions => [{Qs,Cs,As}] array of objects/dictionaries Cs=>array
+  //questions => [...{Qs,Cs,As}] array of objects/dictionaries Cs=>array
+  //Qs,As=>Text
   constructor(userName, questions) {
     this.userName = userName;
     this.questions = questions;
     this.currentQuestion = 0;
-    this.userAnswers = [];
+    this.userAnswers = []; //array of text
     this.result = 0;
     this.maxResult = this.questions[1].length;
     this.timeLimit(100, this.stopExam);
@@ -24,14 +25,15 @@ class Exam {
     this.displayQuestion();
   }
   displayQuestion() {
-    curQ = this.questions[currentQuestion];
+    curQ = this.questions[currentQuestion][question];
     //updating html display logic
+    choices = this.questions[this.currentQuestion][options];
     document.getElementById("Q-text").innerHTML = curQ;
   }
 
   calculateResult() {
-    for (let i = 0; i < this.questions[1].length; i++) {
-      if (this.userAnswers[i] == questions[1][i]) {
+    for (let i = 0; i < this.questions.length; i++) {
+      if (this.userAnswers[i] == this.questions[correctAnswer]) {
         this.result += 1;
       }
     }
@@ -64,6 +66,10 @@ class Exam {
     this.markedQuestion.append(this.currentQuestion);
     //display logic here
   }
+  selectAnswer() {
+    ans = document.getElementById();
+    this.userAnswers.push(ans);
+  }
 }
 //use this design later
 // Array to hold all the questions, answers, and the correct answer
@@ -71,17 +77,17 @@ let examQuestions = [
   {
     question: "What is the capital of France?",
     options: ["Berlin", "Madrid", "Paris", "Rome"],
-    correctAnswer: 2, // index of the correct answer in the options array
+    correctAnswer: "Paris", // index of the correct answer in the options array
   },
   {
     question: "What is 2 + 2?",
     options: ["3", "4", "5", "6"],
-    correctAnswer: 1,
+    correctAnswer: "4",
   },
   {
     question: "Which of these is a fruit?",
     options: ["Carrot", "Potato", "Apple", "Broccoli"],
-    correctAnswer: 2,
+    correctAnswer: "Apple",
   },
 ];
 
