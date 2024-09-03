@@ -165,13 +165,15 @@ class Exam {
   }
 }
 
+//all this should be moved into an independent file
+
 //use this design later
 // Array to hold all the questions, answers, and the correct answer
 let examQuestions = [
   {
     question: "What is the capital of France?",
     options: ["Berlin", "Madrid", "Paris", "Rome"],
-    correctAnswer: "Paris", // index of the correct answer in the options array
+    correctAnswer: "Paris",
   },
   {
     question: "What is 2 + 2?",
@@ -183,9 +185,65 @@ let examQuestions = [
     options: ["Carrot", "Potato", "Apple", "Broccoli"],
     correctAnswer: "Apple",
   },
+  {
+    question: "What is the chemical symbol for water?",
+    options: ["O2", "H2O", "CO2", "NaCl"],
+    correctAnswer: "H2O",
+  },
+  {
+    question: "Who wrote 'Romeo and Juliet'?",
+    options: [
+      "William Shakespeare",
+      "Charles Dickens",
+      "Mark Twain",
+      "Jane Austen",
+    ],
+    correctAnswer: "William Shakespeare",
+  },
+  {
+    question: "What planet is known as the Red Planet?",
+    options: ["Earth", "Mars", "Jupiter", "Venus"],
+    correctAnswer: "Mars",
+  },
+  {
+    question: "What is the largest ocean on Earth?",
+    options: [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean",
+    ],
+    correctAnswer: "Pacific Ocean",
+  },
+  {
+    question: "Who painted the Mona Lisa?",
+    options: [
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Claude Monet",
+    ],
+    correctAnswer: "Leonardo da Vinci",
+  },
+  {
+    question: "Which element has the atomic number 1?",
+    options: ["Oxygen", "Helium", "Hydrogen", "Carbon"],
+    correctAnswer: "Hydrogen",
+  },
+  {
+    question: "In what year did the Titanic sink?",
+    options: ["1905", "1912", "1920", "1935"],
+    correctAnswer: "1912",
+  },
 ];
 
-user = new Exam("omarkandil", examQuestions);
+//get started
+const getStarted = document.getElementById("getStarted");
+getStarted.addEventListener("click", () => {
+  user = new Exam("omarkandil", examQuestions);
+  document.getElementById("landing-page").classList.add("hidden");
+  document.getElementById("exam").classList.remove("hidden");
+});
 
 const submit = document.getElementById("submit");
 submit.addEventListener("click", () => {
