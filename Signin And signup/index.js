@@ -248,3 +248,37 @@ signup_btn.addEventListener("click", () => {
   panels_container.style.cssText = `left: 50%`;
   signin_signup.style.cssText = `left: 44px`;
 });
+
+// Function to convert image to Base64 and store it in local storage
+function saveImageToLocalStorage() {
+  const fileInput = document.getElementById("image");
+
+  // Listen for file selection
+  fileInput.addEventListener("change", function (event) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      // Read file as Data URL (Base64)
+      reader.readAsDataURL(file);
+
+      reader.onload = function (e) {
+        const base64Image = e.target.result;
+
+        // Store the base64 string in local storage
+        localStorage.setItem("userImage", base64Image);
+        console.log("Image saved in local storage!");
+      };
+
+      reader.onerror = function () {
+        console.log("Error reading file!");
+      };
+    } else {
+      console.log("No file selected!");
+    }
+  });
+}
+
+// Call the function to set up the event listener
+saveImageToLocalStorage();

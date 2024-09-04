@@ -234,7 +234,7 @@ getStarted.addEventListener("click", () => {
       const lastName = localStorage.getItem("lastName");
       const userName = firstName + " " + lastName;
       const userImage = localStorage.getItem("userImage");
-      user = new Exam(userName, examQs, "userImage.jpg"); //get username and userImage using local storage or pathing?
+      user = new Exam(userName, examQs, userImage); //get username and userImage using local storage or pathing?
       document.getElementById("landing-page").classList.add("hidden");
       document.getElementById("exam").classList.remove("hidden");
     }
