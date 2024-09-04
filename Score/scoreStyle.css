@@ -71,3 +71,24 @@ h1 {
         font-size: 24px;
     }
 }
+#retake{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 56px;
+    border: none;
+    border-radius: 6px;
+    background-color: #919aaf;
+    color: #eee;
+    font-weight: 600;
+    margin: 25px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+
+}
+#retake:hover{
+    background-color: #424142;
+    transition: 1s ease-in-out;
+}

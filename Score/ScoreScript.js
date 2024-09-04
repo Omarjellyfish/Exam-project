@@ -19,3 +19,6 @@ if (result == 10) {
 } else {
   congratsElement.textContent = `You can do better, ${userName}!`;
 }
+document.getElementById("retake").addEventListener("click", function () {
+  window.location.href = "../Exam/Exam.html";
+});
