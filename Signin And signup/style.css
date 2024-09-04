@@ -227,7 +227,7 @@ form .input label{
     transition: 0.2s;
 }
 .done{
-    left: 6%;
+    left: -246px;
 }
 .end_done{
     left: -550px;
