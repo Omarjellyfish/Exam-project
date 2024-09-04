@@ -189,3 +189,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+//خلي الكود ده عندك عايزين نظبطه, هو ده المفروض بتشيك ع اليوزر نيم و الباسوورد لو هما صح من الفايل يعمل لوج انت عادي
+// const fs = require('fs');
+
+// // Read the JSON file
+// const data = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
+
+// // Function to check if the username and password match
+// function authenticateUser(username, password) {
+//   const user = data.users[username];
+
+//   if (user && user.password === password) {
+//     return true; // Authentication successful
+//   } else {
+//     return false; // Authentication failed
+//   }
+// }
+
+// // Example usage
+// const providedUsername = "username1";
+// const providedPassword = "Omar@1234";
+
+// if (authenticateUser(providedUsername, providedPassword)) {
+//   console.log("Authentication successful!");
+// } else {
+//   console.log("Authentication failed.");
+// }
