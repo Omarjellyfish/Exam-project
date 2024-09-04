@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#congrats {
+    color: #333;
+    font-size: 27px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+#results-text {
+    color: #424142;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 56px;
+    border: none;
+    border-radius: 6px;
+    background-color: #919aaf;
+    color: #eee;
+    font-weight: 600;
+    margin: 25px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn:hover {
+    background-color: #424142;
+    transition: 1s ease-in-out;
+}
+
+@media(max-width: 799px) {
+    h1, #congrats {
+        font-size: 24px;
+    }
+}

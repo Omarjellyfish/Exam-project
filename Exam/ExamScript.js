@@ -82,14 +82,14 @@ class Exam {
       }
     }
   }
-  //stops exam display result
+  //Stops exam display result
   stopExam() {
     this.displayResult();
   }
 
   displayResult() {
     this.calculateResult();
-    //display this.result go to score page
+    //Display this.result go to score page
     console.log(this.result);
     localStorage.setItem(
       "userData",
@@ -99,10 +99,10 @@ class Exam {
       })
     );
 
-    // Optionally, navigate to the score page
+    //navigate to the score page
     window.location.href = "../Score/score.html";
   }
-
+  //timer function
   timeLimit(timeoutSeconds) {
     const endTime = new Date().getTime() + timeoutSeconds * 1000;
 

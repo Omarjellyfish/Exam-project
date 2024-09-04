@@ -3,10 +3,19 @@ const resultsTextElement = document.getElementById("results-text");
 const congratsElement = document.getElementById("congrats");
 
 // Retrieve the user name and result from Local Storage
-const savedData = JSON.parse(localStorage.getItem("userData"));
-const userName = savedData.userName;
-const result = savedData.result;
+const userData = JSON.parse(localStorage.getItem("userData"));
+const userName = userData.userName;
+const result = userData.result;
 
 // Update the HTML elements with the retrieved data
+//add style for each case of marks
 resultsTextElement.textContent += ` ${result}`;
-congratsElement.textContent = `Congratulations, ${userName}!`;
+if (result == 10) {
+  congratsElement.textContent = `FULL MARK, YOU ARE AMAZING, ${userName}!`;
+} else if (result > 7) {
+  congratsElement.textContent = `Welldone, ${userName}!`;
+} else if (result > 5) {
+  congratsElement.textContent = `Good, ${userName}!`;
+} else {
+  congratsElement.textContent = `You can do better, ${userName}!`;
+}
