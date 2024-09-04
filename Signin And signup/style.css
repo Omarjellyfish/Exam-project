@@ -238,6 +238,6 @@ form .input label{
 .error-message {
     color: red;
     font-size: 0.8em;
-    display: none;
+    /* display: none; */
     margin-top: 5px;
 }
