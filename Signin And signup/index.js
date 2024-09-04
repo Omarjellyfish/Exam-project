@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordError = document.querySelector("#password-error");
     const rePasswordError = document.querySelector("#re-password-error");
 
-    // Validate password length
+    // Validate password
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
     // Validate password using the regex
