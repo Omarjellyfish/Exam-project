@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     panels_container.style.cssText = `left: -50%`;
     signin_signup.style.cssText = `left: -473px`;
   });
+  const signup_btn = document.querySelector("#signup-btn");
+  signup_btn.addEventListener("click", () => {
+    container.classList.remove("sign_up_mode");
+    panels_container.style.cssText = `left: 50%`;
+    signin_signup.style.cssText = `left: 6%`;
+  });
 
   // Check if user is already logged in
   if (sessionStorage.getItem("loggedIn")) {
