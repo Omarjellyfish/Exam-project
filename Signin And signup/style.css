@@ -200,6 +200,13 @@ form .input label{
     color: #fff;
     transition: 1.1s ease-in-out;
     transition-delay: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+}
+.content .btn{
+    margin: 20px 0;
 }
 .panel h3{
     font-size: 26px;
