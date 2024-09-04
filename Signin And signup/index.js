@@ -32,15 +32,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const fnameError = document.querySelector("#fname-error");
     const lnameError = document.querySelector("#lname-error");
 
-    const isFnameValid = validateInput(
+    // Function to validate that input contains only text
+    function validateTextInput(input, errorElement, errorMessage) {
+      const textRegex = /^[A-Za-z\s]+$/;
+      if (!input.value.trim()) {
+        errorElement.textContent = "This field is required";
+        return false;
+      } else if (!textRegex.test(input.value.trim())) {
+        errorElement.textContent = errorMessage;
+        return false;
+      } else {
+        errorElement.textContent = "";
+        return true;
+      }
+    }
+
+    const isFnameValid = validateTextInput(
       Fname,
       fnameError,
-      "First Name is required"
+      "First Name must contain only letters"
     );
-    const isLnameValid = validateInput(
+    const isLnameValid = validateTextInput(
       Lname,
       lnameError,
-      "Last Name is required"
+      "Last Name must contain only letters"
     );
 
     if (!isFnameValid || !isLnameValid) {
