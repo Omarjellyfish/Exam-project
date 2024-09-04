@@ -9,7 +9,7 @@ class Exam {
     console.log(this.userAnswers, "hello from useranswers");
     this.result = 0;
     this.maxResult = this.questions[1].length;
-    this.timeLimit(100, this.stopExam);
+    // this.timeLimit(60, this.stopExam);
     this.markedQuestion = new Set();
     this.userImage_path = userImage_path;
     this.displayuser();
