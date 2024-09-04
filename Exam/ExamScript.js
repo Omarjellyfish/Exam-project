@@ -230,7 +230,11 @@ getStarted.addEventListener("click", () => {
     if (examQs) {
       // Initialize your Exam object with the fetched questions
       shuffleArray(examQs);
-      user = new Exam("omarkandil", examQs, "userImage.jpg"); //get username and userImage using local storage or pathing?
+      const firstName = localStorage.getItem("firstName");
+      const lastName = localStorage.getItem("lastName");
+      const userName = firstName + " " + lastName;
+      const userImage = localStorage.getItem("userImage");
+      user = new Exam(userName, examQs, "userImage.jpg"); //get username and userImage using local storage or pathing?
       document.getElementById("landing-page").classList.add("hidden");
       document.getElementById("exam").classList.remove("hidden");
     }
