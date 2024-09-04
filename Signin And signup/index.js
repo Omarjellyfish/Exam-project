@@ -118,21 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const rePasswordError = document.querySelector("#re-password-error");
 
     // Validate password length
-    const isPasswordValid =
-      validateInput(
-        password,
-        passwordError,
-        "Password must be at least 8 characters"
-      ) && password.value.length >= 8;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-    // Validate if passwords match
+    // Validate password using the regex
+    const isPasswordValid = passwordRegex.test(password.value);
     const isRePasswordValid =
       validateInput(rePassword, rePasswordError, "Passwords do not match") &&
       rePassword.value === password.value;
 
     // Display appropriate error messages
     if (!isPasswordValid) {
-      passwordError.textContent = "Password must be at least 8 characters";
+      passwordError.textContent =
+        "Password must be at least 8 characters, include 1 special character, 1 number, 1 capital letter, and 1 small letter";
     } else {
       passwordError.textContent = "";
     }
