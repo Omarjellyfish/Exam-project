@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="EStyle.css" />
   </head>
   <body>
-    <div class="container center" id="landing-page">
+    <div class="landing-page" id="landing-page">
       <div class="parent">
         <p>
-          Welcome to Hambozo Exam,<br />
+          Welcome to jellyfish exam,<br />
           We wish you success as you embark on<br />
           this assessment.<br />
           Begin confidently & do your best!
@@ -33,38 +33,44 @@
         <img src="./image/undraw_learning_sketching_nd4f.png" alt="" />
       </div>
     </div>
-    <div class="container center hidden" id="exam">
-      <div id="progress-bar"></div>
-      <div id="Exam">
-        <div id="question">
-          <p id="Q">Question 1:</p>
-          <p id="Q-text">skljdflak kldsjafl ldalsjfd</p>
-        </div>
-
-        <div id="answers">
-          <div class="ans-row">
-            <button class="ans" id="a1">text</button>
-            <button class="ans" id="a2">text</button>
+    <div class="container">
+      <div class="examin center hidden" id="exam">
+        <div id="Exam">
+          <div id="question">
+            <p id="Q">Question 1:</p>
+            <p id="Q-text">skljdflak kldsjafl ldalsjfd</p>
           </div>
-
-          <div class="ans-row">
-            <button class="ans" id="a3">text</button>
-            <button class="ans" id="a4">text</button>
+          <div id="answers">
+            <div class="ans-row">
+              <button class="ans" id="a1">text</button>
+              <button class="ans" id="a2">text</button>
+              <button class="ans" id="a3">text</button>
+              <button class="ans" id="a4">text</button>
+            </div>
           </div>
-        </div>
-
-        <div id="navigation">
-          <button class="next-prev" id="prev">Prev</button>
-          <button class="flag" id="mark">flag</button>
-          <button class="next-prev" id="next">next</button>
+          <div id="navigation">
+            <button class="next-prev" id="prev">Prev</button>
+            <button class="flag" id="mark">flag</button>
+            <button class="next-prev" id="next">next</button>
+          </div>
         </div>
       </div>
-      <div id="side-menu">
+      <div class="sidbar" id="side-menu .hidden ">
         <div class="user">
-          <img src="IMG-20240628-WA0044.jpg" alt="userImage" id="userImage" />
+          <div class="image">
+            <img
+              src="../Signin And signup/image/WhatsApp Image 2024-09-03 at 02.53.27_a59301d3.jpg"
+              alt="userImage"
+              id="userImage"
+            />
+          </div>
+
           <p id="userName">User Name</p>
           <button id="logout">logout</button>
-          <p id="timer">time</p>
+          <div class="flages_timer">
+            <p id="timer">time</p>
+            <i class="bx bxs-bookmark-minus bx-tada"></i>
+          </div>
           <button id="submit" class="flag">submit</button>
         </div>
         <div id="flagged-questions">Flagged Questions</div>
