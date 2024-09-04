@@ -1,1 +1,8 @@
-[{}]
+{
+    "users": {
+      "username1": {
+        "password": "Omar@1234",
+        "results": "none"
+      }
+    }
+}
