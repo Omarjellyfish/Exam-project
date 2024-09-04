@@ -91,6 +91,16 @@ class Exam {
     this.calculateResult();
     //display this.result go to score page
     console.log(this.result);
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        result: this.result,
+        userName: this.userName,
+      })
+    );
+
+    // Optionally, navigate to the score page
+    window.location.href = "../Score/score.html";
   }
 
   timeLimit(timeoutSeconds) {
@@ -172,7 +182,7 @@ class Exam {
 // Creating a function to fetch teh questions and parse
 async function loadExamQuestions() {
   try {
-    const response = await fetch("examQuestion.json"); // Path to your JSON file
+    const response = await fetch("../Database/examQuestion.json"); // Path to your JSON file
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
