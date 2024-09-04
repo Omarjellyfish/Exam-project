@@ -172,7 +172,7 @@ class Exam {
 // Creating a function to fetch teh questions and parse
 async function loadExamQuestions() {
   try {
-    const response = await fetch("examQuedstion.json"); // Path to your JSON file
+    const response = await fetch("examQuestion.json"); // Path to your JSON file
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
