@@ -100,7 +100,8 @@ class Exam {
     );
 
     //navigate to the score page
-    window.location.href = "../Score/score.html";
+    // Redirect to Score.html and replace history state
+    window.location.replace("../Score/score.html");
   }
   //timer function
   timeLimit(timeoutSeconds) {

@@ -22,3 +22,8 @@ if (result == 10) {
 document.getElementById("retake").addEventListener("click", function () {
   window.location.href = "../Exam/Exam.html";
 });
+//preventing going back unless retake
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+  window.history.go(1); // Prevent going back
+};
