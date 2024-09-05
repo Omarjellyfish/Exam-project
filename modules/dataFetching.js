@@ -1,4 +1,4 @@
-async function loadExamQuestions() {
+export async function loadExamQuestions(displayErrorPage) {
   try {
     const response = await fetch("../Database/examQuestion.json"); // Path to your JSON file
     if (!response.ok) {
@@ -13,7 +13,7 @@ async function loadExamQuestions() {
 }
 
 // Function to display the error page
-function displayErrorPage() {
+export function displayErrorPage() {
   // Create the error page content
   const errorPage = document.createElement("div");
   errorPage.id = "error-page";
@@ -31,7 +31,7 @@ function displayErrorPage() {
 }
 
 // Function to shuffle an array using Fisher-Yates algorithm thanks gpt
-function shuffleArray(array) {
+export function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
