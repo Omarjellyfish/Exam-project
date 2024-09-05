@@ -247,6 +247,12 @@ submit.addEventListener("click", () => {
   user.stopExam();
 });
 
+const logout = document.getElementById("logout");
+logout.addEventListener("click", () => {
+  sessionStorage.setItem("loggedIn", "false");
+  window.location.href = "../SignIn And signup/index.html";
+});
+
 const a1 = document.getElementById("a1");
 const a2 = document.getElementById("a2");
 const a3 = document.getElementById("a3");
