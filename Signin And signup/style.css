@@ -268,12 +268,14 @@ form .input label{
         display: none;
     }
     .container{
-        width: 60vw;
+        width: 80%;
         justify-content: center;
+        position: absolute;
+        left: 45px;
     }
-    .signin-signup {
+    /* .signin-signup {
         left: 2px;
-    }
+    } */
     .panels-container{
         display: none;
     }
@@ -281,12 +283,12 @@ form .input label{
         display: none;
     }
     .done{
-        left: -290px;
+        left: -244px;
     }
     .end_done{
-        left: -588px;
+        left: -550px;
     }
     .done-4{
-        left: -889px;
+        left: -855px;
     }
 }
