@@ -24,7 +24,7 @@ getStarted.addEventListener("click", () => {
       console.log(user);
 
       document.getElementById("landing-page").classList.add("hidden");
-      document.getElementById("exam").classList.remove("hidden");
+      document.getElementById("examContainer").classList.remove("hidden");
     }
   });
 });
