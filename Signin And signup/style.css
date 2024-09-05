@@ -167,7 +167,18 @@ form .input label{
 .image img{
     width: 120%;
     filter: grayscale(85%);
+    animation: 5s linear 0s infinite normal none running up-and-down;
+    position: relative;
 }
+@keyframes up-and-down{
+    0% ,100%{
+        top: 0;
+    
+        }
+    50% {
+        top: -50px;
+        }
+    }
 .container .page-2 .header .line-1 .two:before,
 .container .page-3 .header .line-1 .two:before,
 .container .page-3 .header .line-2 .two:before{
