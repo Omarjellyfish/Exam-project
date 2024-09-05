@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Transition to the next page
       container.classList.add("sign_up_mode");
       panels_container.style.cssText = `left: -50%`;
-      signin_signup.style.cssText = `left: -473px`;
+      signin_signup.classList.add("done-4");
     }
   });
 

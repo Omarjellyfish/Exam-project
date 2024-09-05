@@ -260,17 +260,33 @@ form .input label{
     /* display: none; */
     margin-top: 5px;
 }
+.done-4{
+    left: -473px
+}
 @media(max-width:790px){
     .image img{
         display: none;
     }
     .container{
         width: 60vw;
+        justify-content: center;
+    }
+    .signin-signup {
+        left: 2px;
     }
     .panels-container{
         display: none;
     }
     .container::before{
         display: none;
+    }
+    .done{
+        left: -290px;
+    }
+    .end_done{
+        left: -588px;
+    }
+    .done-4{
+        left: -889px;
     }
 }
