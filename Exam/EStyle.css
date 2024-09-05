@@ -76,26 +76,21 @@
 
 }
 .sidbar{
-    right: 0px;
-    top: 0px;
-    width: 250px;
-    height: 100%;
-    box-shadow: 0 0 10px #ddd;
-    background-color: #373e46;
-    flex: 1;
+  top: 0px;
+  width: 250px;
+  height: 100%;
+  box-shadow: -15px 3px 10px #ddd;
+  background-color: #373e46;
+  flex: 0.9;
 }
-/* @media(max-width:767px){
-    .sidbar {
-        width: 62px;
-        padding: 10px;
-    } 
-} */
+
 .sidbar .user{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
 }
+
 .sidbar .image{
     width: 130px;
     height: 130px;
@@ -104,7 +99,7 @@
     background-color: aliceblue;
     overflow: hidden;
 }
-.user> p{
+.user .img_name  p{
   margin: 15px 0;
   font-size: 26px;
   color: #eee;
@@ -120,6 +115,10 @@
   margin: 10px 0;
   text-transform: uppercase;
   cursor: pointer;
+}
+.sidbar .flag:hover{
+  background-color: #333;
+  color: #eee;
 }
 .flages_timer {
   display: flex;
@@ -146,8 +145,35 @@
   margin-top: 7px;
   margin-left: 9%;
   border-radius: 10px;
+  background-color: #5f585829;
+  color: #eee;
+}
+.flagged-q:hover{
+  background-color: #333;
+
 }
 
+@media(max-width:767px){
+  .sidbar .image{
+    width: 50px;
+    height: 50px;
+  }
+  .sidbar .user{
+    flex-direction: row;
+  }
+  .sidbar {
+    width: 100%;
+    padding: 10px;
+} 
+  .container{
+    flex-direction: column-reverse;
+  }
+  .user .img_name p{
+    font-size: 16px;
+    text-align: center;
+
+  }
+}
 
 /* -------------------  examin --------- */
 .left{
@@ -231,7 +257,33 @@
 .hidden{
     display: none;
 }
+@media(max-width:767px){
+  .left{
+  justify-content: start;
+
+  }
+  #question{
+    width: 90%;
+  }
+  #answers{
+    width: 90%;
+  }
+  #navigation{
+    width: 90%;
+  }
+  .examin{
+    width: 350px;
+  }
+  #Exam{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .ans-row .ans {
+    width: 46%;
+  }
+}
 .selected{
   color: #eee !important;
   background-color: #333 !important;
 }
+
