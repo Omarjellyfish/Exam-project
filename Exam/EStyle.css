@@ -161,7 +161,7 @@
   .user .img_name p{
     font-size: 16px;
     text-align: center;
-    
+
   }
 }
 
@@ -271,4 +271,8 @@
   .ans-row .ans {
     width: 46%;
   }
+}
+.selected{
+  color: #eee !important;
+  background-color: #333 !important;
 }

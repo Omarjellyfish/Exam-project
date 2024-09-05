@@ -1,4 +1,4 @@
-class Exam {
+export default class Exam {
   //questions => [...{Qs,Cs,As}] array of objects/dictionaries Cs=>array
   //Qs,As=>Text
   constructor(userName, questions, userImage_path) {
@@ -9,7 +9,7 @@ class Exam {
     console.log(this.userAnswers, "hello from useranswers");
     this.result = 0;
     this.maxResult = this.questions[1].length;
-    this.timeLimit(100, this.stopExam);
+    // this.timeLimit(60, this.stopExam);
     this.markedQuestion = new Set();
     this.userImage_path = userImage_path;
     this.displayuser();
@@ -82,14 +82,14 @@ class Exam {
       }
     }
   }
-  //stops exam display result
+  //Stops exam display result
   stopExam() {
     this.displayResult();
   }
 
   displayResult() {
     this.calculateResult();
-    //display this.result go to score page
+    //Display this.result go to score page
     console.log(this.result);
     localStorage.setItem(
       "userData",
@@ -99,10 +99,11 @@ class Exam {
       })
     );
 
-    // Optionally, navigate to the score page
-    window.location.href = "../Score/score.html";
+    //navigate to the score page
+    // Redirect to Score.html and replace history state
+    window.location.replace("../Score/score.html");
   }
-
+  //timer function
   timeLimit(timeoutSeconds) {
     const endTime = new Date().getTime() + timeoutSeconds * 1000;
 
@@ -175,6 +176,3 @@ class Exam {
     ans.classList.add("selected");
   }
 }
-
-//all this should be moved into an independent file
-export default Exam;

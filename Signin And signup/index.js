@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Check if user is already logged in
-  console.log(sessionStorage.getItem("loggedIn"));
   if (sessionStorage.getItem("loggedIn") === "true") {
     window.location.replace("../Exam/Exam.html");
   }
