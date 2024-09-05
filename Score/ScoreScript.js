@@ -46,7 +46,6 @@ window.onpopstate = function () {
 // CHECK IF USER LOGGED IN OR NOT, IF NOT REDIRECTS TO SIGNUP PAGE
 document.addEventListener("DOMContentLoaded", () => {
   // Check if user is logged in
-  console.log(sessionStorage.getItem("loggedIn"));
   if (
     sessionStorage.getItem("loggedIn") === null ||
     sessionStorage.getItem("loggedIn") === "false"

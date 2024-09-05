@@ -6,7 +6,6 @@ export default class Exam {
     this.questions = questions;
     this.currentQuestion = 0;
     this.userAnswers = new Array(this.questions.length); //array of text
-    console.log(this.userAnswers, "hello from useranswers");
     this.result = 0;
     this.maxResult = this.questions.length;
     this.timeLimit(60, this.stopExam);
@@ -18,7 +17,6 @@ export default class Exam {
   displayuser() {
     //display logic
     document.getElementById("userName").innerText = this.userName;
-    console.log(this.userImage_path);
     document.getElementById("userImage").src = this.userImage_path;
   }
   getNextQuestion() {
@@ -44,10 +42,7 @@ export default class Exam {
     } else {
       document.getElementById("prev").classList.remove("hidden");
     }
-    console.log(this.currentQuestion);
     const curQ = this.questions[this.currentQuestion]["question"];
-    console.log(curQ);
-
     // Update question and choices
     document.getElementById("Q").innerText = `Question ${
       this.currentQuestion + 1
@@ -90,7 +85,6 @@ export default class Exam {
   displayResult() {
     this.calculateResult();
     //Display this.result go to score page
-    console.log(this.result);
     localStorage.setItem(
       "userData",
       JSON.stringify({

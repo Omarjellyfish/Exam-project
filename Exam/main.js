@@ -11,7 +11,6 @@ let user; // Will hold the Exam object later
 const getStarted = document.getElementById("getStarted");
 getStarted.addEventListener("click", () => {
   loadExamQuestions(displayErrorPage).then((examQs) => {
-    console.log(examQs);
     if (examQs) {
       shuffleArray(examQs);
       const firstName = localStorage.getItem("firstName");
@@ -21,7 +20,7 @@ getStarted.addEventListener("click", () => {
 
       // Initialize the Exam object
       user = new Exam(userName, examQs, userImage);
-      console.log(user);
+      console.log(user); //keep this for getting fullmark in exam as well as showing structure
 
       document.getElementById("landing-page").classList.add("hidden");
       document.getElementById("examContainer").classList.remove("hidden");
@@ -29,7 +28,7 @@ getStarted.addEventListener("click", () => {
   });
 });
 
-// Add event listeners, but first ensure "user" is initialized
+// Add event listeners, but first ensure "user" is initialized(was not able to use button)
 const submit = document.getElementById("submit");
 submit.addEventListener("click", () => {
   if (user) {
@@ -114,7 +113,6 @@ a4.addEventListener("click", () => {
 // CHECK IF USER LOGGED IN OR NOT, IF NOT REDIRECTS TO SIGNUP PAGE
 document.addEventListener("DOMContentLoaded", () => {
   // Check if user is logged in
-  console.log(sessionStorage.getItem("loggedIn"));
   if (
     sessionStorage.getItem("loggedIn") === null ||
     sessionStorage.getItem("loggedIn") === "false"
