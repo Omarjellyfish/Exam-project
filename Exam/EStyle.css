@@ -181,6 +181,23 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
+}
+.lines{
+  background: red;
+  width: 60%;
+  height: 10px;
+  position: relative;
+  top: -71px;
+  border-radius: 14px;
+  background-color: #979393;
+}
+.lines span{
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+  position: absolute;
+  border-radius:14px ;
 }
 #Exam{
   display: flex;
@@ -280,6 +297,10 @@
   }
   .ans-row .ans {
     width: 46%;
+  }
+  .lines{
+    top: 11px;
+  
   }
 }
 .selected{
