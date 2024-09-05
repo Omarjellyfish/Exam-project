@@ -292,3 +292,6 @@ form .input label{
         left: -855px;
     }
 }
+.hidden{
+    display: none;
+}
