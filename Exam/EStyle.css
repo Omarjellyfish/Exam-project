@@ -76,13 +76,12 @@
 
 }
 .sidbar{
-    right: 0px;
-    top: 0px;
-    width: 250px;
-    height: 100%;
-    box-shadow: 0 0 10px #ddd;
-    background-color: #373e46;
-    flex: 0.9;
+  top: 0px;
+  width: 250px;
+  height: 100%;
+  box-shadow: -15px 3px 10px #ddd;
+  background-color: #373e46;
+  flex: 0.9;
 }
 
 .sidbar .user{
@@ -117,6 +116,10 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+.sidbar .flag:hover{
+  background-color: #333;
+  color: #eee;
+}
 .flages_timer {
   display: flex;
   width: 158px;
@@ -142,7 +145,14 @@
   margin-top: 7px;
   margin-left: 9%;
   border-radius: 10px;
+  background-color: #5f585829;
+  color: #eee;
 }
+.flagged-q:hover{
+  background-color: #333;
+
+}
+
 @media(max-width:767px){
   .sidbar .image{
     width: 50px;
@@ -276,3 +286,4 @@
   color: #eee !important;
   background-color: #333 !important;
 }
+
