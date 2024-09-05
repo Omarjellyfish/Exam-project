@@ -1,4 +1,3 @@
-// Get the elements from the HTML
 const resultsTextElement = document.getElementById("results-text");
 const congratsElement = document.getElementById("congrats");
 
@@ -8,11 +7,23 @@ const userName = userData.userName;
 const result = userData.result;
 const maxResult = userData.maxResult;
 let percentage = parseInt(result) / parseInt(maxResult);
+
 // Update the HTML elements with the retrieved data
-//add style for each case of marks
-resultsTextElement.textContent += ` ${result}`;
+resultsTextElement.textContent = `You Scored: ${result}`;
+
 if (percentage == 1) {
   congratsElement.textContent = `FULL MARK, YOU ARE AMAZING, ${userName}!`;
+
+  // Apply the rainbow effect for full mark
+  resultsTextElement.classList.add("rainbow-text");
+  congratsElement.classList.add("rainbow-text");
+
+  // Trigger confetti animation
+  confetti({
+    particleCount: 150,
+    spread: 80,
+    origin: { y: 0.6 },
+  });
 } else if (percentage > 0.7) {
   congratsElement.textContent = `Welldone, ${userName}!`;
 } else if (percentage > 0.5) {
@@ -20,10 +31,12 @@ if (percentage == 1) {
 } else {
   congratsElement.textContent = `You can do better, ${userName}!`;
 }
+
 document.getElementById("retake").addEventListener("click", function () {
   window.location.href = "../Exam/Exam.html";
 });
-//preventing going back unless retake
+
+// Prevent going back unless retake
 window.history.pushState(null, null, window.location.href);
 window.onpopstate = function () {
   window.history.go(1); // Prevent going back

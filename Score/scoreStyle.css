@@ -92,3 +92,33 @@ h1 {
     background-color: #424142;
     transition: 1s ease-in-out;
 }
+
+/* rainbow animation gpt*/
+/* Fluent and Seamless Gradient Rainbow Effect */
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .rainbow-text {
+    background: linear-gradient(270deg, #ff004c, #ffba08, #0bda51, #00bbf9, #9b5de5);
+    background-size: 400% 400%; /* Increased size for smooth cycling */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 3s ease-in-out infinite; /* Longer duration for seamless cycling */
+    font-weight: 10000;
+    font-size: larger;
+  }
+  
+  #results-text.rainbow-text {
+    font-size: 42px;
+    letter-spacing: 1.5px;
+  }
+  
+  #congrats.rainbow-text {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  
