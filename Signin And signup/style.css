@@ -18,7 +18,8 @@ body{
     height: 80vh;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, -1.7), 0 6px 23px 0 rgba(0, 0, 0, 0.3);    overflow: hidden;
+    box-shadow: 15px 4px 0px 0 rgba(0, 0, 0, -1.7), 1px 0px 5px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 .container::before{
     content: "";
