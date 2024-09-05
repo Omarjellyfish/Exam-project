@@ -8,7 +8,7 @@ export default class Exam {
     this.userAnswers = new Array(this.questions.length); //array of text
     console.log(this.userAnswers, "hello from useranswers");
     this.result = 0;
-    this.maxResult = this.questions[1].length;
+    this.maxResult = this.questions.length;
     this.timeLimit(60, this.stopExam);
     this.markedQuestion = new Set();
     this.userImage_path = userImage_path;
@@ -96,6 +96,7 @@ export default class Exam {
       JSON.stringify({
         result: this.result,
         userName: this.userName,
+        maxResult: this.maxResult,
       })
     );
 
