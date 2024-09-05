@@ -26,7 +26,7 @@
 
   .image img{
     max-width: 600px;
-    filter: grayscale(85%);
+    /* filter: grayscale(85%); */
   }
 
   .parent .ans{
