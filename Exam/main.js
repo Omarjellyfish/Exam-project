@@ -109,3 +109,16 @@ a4.addEventListener("click", () => {
     console.error("User is not defined yet!");
   }
 });
+
+//UNCOMMENT THIS BEFORE DELIVERING THE PROJECT
+// CHECK IF USER LOGGED IN OR NOT, IF NOT REDIRECTS TO SIGNUP PAGE
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Check if user is logged in
+//   console.log(sessionStorage.getItem("loggedIn"));
+//   if (
+//     sessionStorage.getItem("loggedIn") === null ||
+//     sessionStorage.getItem("loggedIn") === "false"
+//   ) {
+//     window.location.replace("../Signin And signup/index.html"); // Redirect to login page if not logged in
+//   }
+// });
