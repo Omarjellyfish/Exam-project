@@ -36,7 +36,7 @@ document.getElementById("retake").addEventListener("click", function () {
   window.location.replace("../Exam/Exam.html");
 });
 
-// // Prevent going back unless retake
+// // Prevent going back unless retake why doesnt it work?
 window.history.pushState(null, null, window.location.href);
 window.onpopstate = function () {
   window.history.go(1); // Prevent going back
