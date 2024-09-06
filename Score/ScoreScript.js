@@ -9,7 +9,7 @@ const maxResult = userData.maxResult;
 let percentage = parseInt(result) / parseInt(maxResult);
 
 // Update the HTML elements with the retrieved data
-resultsTextElement.textContent = `You Scored: ${result}`;
+resultsTextElement.textContent = `You Scored: ${result}/${maxResult}`;
 
 if (percentage == 1) {
   congratsElement.textContent = `FULL MARK, YOU ARE AMAZING, ${userName}!`;
