@@ -21,7 +21,11 @@ getStarted.addEventListener("click", () => {
       // Initialize the Exam object
       user = new Exam(userName, examQs, userImage);
       console.log(user); //keep this for getting fullmark in exam as well as showing structure
-
+      // Prevent going back unless retake
+      window.history.pushState(null, null, window.location.href);
+      window.onpopstate = function () {
+        window.history.go(1); // Prevent going back
+      };
       document.getElementById("landing-page").classList.add("hidden");
       document.getElementById("examContainer").classList.remove("hidden");
     }

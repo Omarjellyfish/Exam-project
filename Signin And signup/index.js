@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   page_one_btn.addEventListener("click", (event) => {
     event.preventDefault();
   });
+  pageFourBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
   const login_btn = document.querySelector("#login-btn");
-  login_btn.addEventListener("click", () => {
+  login_btn.addEventListener("click", (event) => {
     container.classList.add("sign_up_mode");
     panels_container.style.cssText = `left: -50%`;
     signin_signup.style.cssText = `left: -473px`;
+    event.preventDefault();
   });
 
   // Check if user is already logged in
