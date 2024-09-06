@@ -36,20 +36,20 @@ document.getElementById("retake").addEventListener("click", function () {
   window.location.replace("../Exam/Exam.html");
 });
 
-// Prevent going back unless retake
-window.history.pushState(null, null, window.location.href);
-window.onpopstate = function () {
-  window.history.go(1); // Prevent going back
-};
+// // Prevent going back unless retake
+// window.history.pushState(null, null, window.location.href);
+// window.onpopstate = function () {
+//   window.history.go(1); // Prevent going back
+// };
 
 //UNCOMMENT THIS BEFORE DELIVERING THE PROJECT
 // CHECK IF USER LOGGED IN OR NOT, IF NOT REDIRECTS TO SIGNUP PAGE
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Check if user is logged in
-//   if (
-//     sessionStorage.getItem("loggedIn") === null ||
-//     sessionStorage.getItem("loggedIn") === "false"
-//   ) {
-//     window.location.replace("../Signin And signup/index.html"); // Redirect to login page if not logged in
-//   }
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if user is logged in
+  if (
+    sessionStorage.getItem("loggedIn") === null ||
+    sessionStorage.getItem("loggedIn") === "false"
+  ) {
+    window.location.replace("../Signin And signup/index.html"); // Redirect to login page if not logged in
+  }
+});
