@@ -12,8 +12,8 @@ let percentage = parseInt(result) / parseInt(maxResult);
 resultsTextElement.textContent = `You Scored: ${result}/${maxResult}`;
 
 if (percentage == 1) {
+  document.getElementById("retake").classList.add("hidden");
   congratsElement.textContent = `FULL MARK, YOU ARE AMAZING, ${userName}!`;
-
   // Apply the rainbow effect for full mark
   resultsTextElement.classList.add("rainbow-text");
   congratsElement.classList.add("rainbow-text");
