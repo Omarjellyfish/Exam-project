@@ -120,3 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.replace("../Signin And signup/index.html"); // Redirect to login page if not logged in
   }
 });
+// // Prevent going back unless retake url followed by ? casue problems
+// window.history.pushState(null, null, window.location.href);
+// window.onpopstate = function () {
+//   window.history.go(1); // Prevent going back
+// };

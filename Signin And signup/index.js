@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   const panels_container = document.querySelector(".panels-container");
   const pageFourBtn = document.querySelector("#page_four_btn");
-
+  page_one_btn.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
   const login_btn = document.querySelector("#login-btn");
   login_btn.addEventListener("click", () => {
     container.classList.add("sign_up_mode");
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Check if user is already logged in
   if (sessionStorage.getItem("loggedIn") === "true") {
-    window.location.replace("../Exam/Exam.html");
+    window.location.href = "../Exam/Exam.html";
   }
 
   // Function to validate input fields
