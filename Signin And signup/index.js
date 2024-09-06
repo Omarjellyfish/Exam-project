@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         // User is authenticated
         sessionStorage.setItem("loggedIn", "true");
-        window.location.href = "../Exam/Exam.html";
+        window.location.replace("../Exam/Exam.html");
       } else {
         // Authentication failed
         emailError.textContent = "Invalid email or password";

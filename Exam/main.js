@@ -37,6 +37,7 @@ const submit = document.getElementById("submit");
 submit.addEventListener("click", () => {
   if (user) {
     user.stopExam();
+    window.location.replace("../Score/score.html");
   } else {
     console.error("User is not defined yet!");
   }
@@ -72,7 +73,7 @@ flag_btn.addEventListener("click", () => {
 const logout = document.getElementById("logout");
 logout.addEventListener("click", () => {
   sessionStorage.setItem("loggedIn", "false");
-  window.location.href = "../SignIn And signup/index.html";
+  window.location.replace("../SignIn And signup/index.html");
 });
 
 // Answer choices event listeners

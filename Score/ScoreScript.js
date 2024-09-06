@@ -37,10 +37,10 @@ document.getElementById("retake").addEventListener("click", function () {
 });
 
 // // Prevent going back unless retake
-// window.history.pushState(null, null, window.location.href);
-// window.onpopstate = function () {
-//   window.history.go(1); // Prevent going back
-// };
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+  window.history.go(1); // Prevent going back
+};
 
 //UNCOMMENT THIS BEFORE DELIVERING THE PROJECT
 // CHECK IF USER LOGGED IN OR NOT, IF NOT REDIRECTS TO SIGNUP PAGE

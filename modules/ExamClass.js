@@ -96,7 +96,6 @@ export default class Exam {
 
     //navigate to the score page
     // Redirect to Score.html and replace history state
-    window.location.replace("../Score/score.html");
   }
   //timer function
   timeLimit(timeoutSeconds) {
