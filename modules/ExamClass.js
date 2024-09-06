@@ -131,13 +131,13 @@ export default class Exam {
     );
 
     if (this.markedQuestion.has(this.currentQuestion)) {
-      // Unflag: remove the section
+      // Unflag remove the section
       this.markedQuestion.delete(this.currentQuestion);
       if (existingSection) {
         flaggedQuestionsContainer.removeChild(existingSection);
       }
     } else {
-      // Flag: add the question to the set and create a new section
+      // Flag add the question to the set and create a new section
       this.markedQuestion.add(this.currentQuestion);
 
       // Create a new section element
@@ -147,7 +147,7 @@ export default class Exam {
       newSection.innerText = `Question ${this.currentQuestion + 1}`;
       newSection.addEventListener("click", () => {
         const text = newSection.innerText;
-        this.currentQuestion = parseInt(text.match(/\d+/)[0] - 1, 10); //regex to get number
+        this.currentQuestion = parseInt(text.match(/\d+/)[0] - 1, 10); //Regex to get number only from text
         this.displayQuestion();
       });
 
