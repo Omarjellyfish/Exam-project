@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   page_one_btn.addEventListener("click", (event) => {
     event.preventDefault();
   });
+  page_two_btn.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
   pageFourBtn.addEventListener("click", (e) => {
     e.preventDefault();
   });
