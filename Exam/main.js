@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sessionStorage.getItem("loggedIn") === null ||
     sessionStorage.getItem("loggedIn") === "false"
   ) {
-    window.location.replace("../Signin And signup/index.html"); // Redirect to login page if not logged in
+    window.location.replace("../Signin-signup/index.html"); // Redirect to login page if not logged in
   }
 });
 // // Prevent going back unless retake url followed by ? casue problems
