@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+body {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 46vw;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 15px 4px 0px 0 rgba(0, 0, 0, -1.7), 1px 0px 5px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #565f6c;
+    z-index: 6;
+    left: 50%;
+
+    transition: 1s ease-in-out;
+}
+
+.signin-signup {
+    position: absolute;
+    top: 14px;
+    left: 45px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: 0.3s ease-in-out;
+    z-index: 5;
+}
+
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    min-width: 238px;
+    padding: 0 10px;
+}
+
+.container .page-1 .header {
+    position: relative;
+    top: -100px;
+}
+
+.container .page-2 .header,
+.container .page-3 .header {
+    position: relative;
+    top: -76px;
+}
+
+.container .header .circles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container .header .circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .circle .one {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.container .header .circle .two {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #4e4a4a;
+    text-align: center;
+    border-radius: 50%;
+    outline: 2px solid #b29f9f;
+    background-color: #333333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.container .header .line-1 .two:before {
+    content: " ";
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+    left: 58px;
+}
+
+.container .header .line-2 .two:before {
+    content: " ";
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background-color: #333;
+    left: 123px;
+}
+
+form .input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form .input label {
+    font-size: 20px;
+    color: #aba5a5;
+    letter-spacing: 1.1px;
+}
+
+.input-faild {
+    width: 100%;
+    height: 39px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+}
+
+.input-faild i {
+    flex: 1;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+
+}
+
+.input-faild input {
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-weight: 600;
+    color: #444;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 135px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background-color: #919aaf;
+    color: #eee;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #424142;
+}
+
+.image img {
+    width: 120%;
+    filter: grayscale(85%);
+    animation: 5s linear 0s infinite normal none running up-and-down;
+    position: relative;
+}
+
+@keyframes up-and-down {
+
+    0%,
+    100% {
+        top: 0;
+
+    }
+
+    50% {
+        top: -50px;
+    }
+}
+
+.container .page-2 .header .line-1 .two:before,
+.container .page-3 .header .line-1 .two:before,
+.container .page-3 .header .line-2 .two:before {
+    background-color: red;
+}
+
+.panels-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+.panel {
+    z-index: 6;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    min-width: 238px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.content {
+    color: #fff;
+    transition: 1.1s ease-in-out;
+    transition-delay: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+
+.content .btn {
+    margin: 20px 0;
+}
+
+.panel h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+
+}
+
+.panel p {
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+}
+
+.page-1,
+.page-2,
+.page-3 {
+    margin-right: 60px;
+    transition: 0.2s;
+}
+
+.done {
+    left: -246px;
+}
+
+.end_done {
+    left: -550px;
+}
+
+.container.sign_up_mode::before {
+    left: -50%;
+}
+
+.page-4 label {
+    margin: 15px 0;
+}
+
+.page-4 i {
+    font-size: 24px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    /* display: none; */
+    margin-top: 5px;
+}
+
+.done-4 {
+    left: -473px
+}
+
+@media(max-width:790px) {
+    .image img {
+        display: none;
+    }
+
+    .container {
+        width: 80%;
+        justify-content: center;
+        position: absolute;
+        left: 45px;
+    }
+
+    /* .signin-signup {
+        left: 2px;
+    } */
+    .panels-container {
+        display: none;
+    }
+
+    .container::before {
+        display: none;
+    }
+
+    .done {
+        left: -244px;
+    }
+
+    .end_done {
+        left: -550px;
+    }
+
+    .done-4 {
+        left: -855px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (min-width:426px) and (max-width: 788px) {
+    .container {
+        width: 44%;
+    }
+
+    .body {
+        background-color: #333;
+
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .signin-signup {
+        left: 20px;
+    }
+}

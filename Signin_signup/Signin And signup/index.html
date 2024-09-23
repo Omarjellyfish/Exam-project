@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Signin And Signup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="parent">
+        <div class="signin-signup">
+          <div class="page-1">
+            <div class="header">
+              <div class="circles">
+                <div class="circle line-1">
+                  <span class="one">Name</span>
+                  <span class="two">1</span>
+                </div>
+                <div class="circle line-2">
+                  <span class="one">Email</span>
+                  <span class="two">2</span>
+                </div>
+                <div class="circle">
+                  <span class="one">Password</span>
+                  <span class="two">3</span>
+                </div>
+              </div>
+            </div>
+            <form action="#" id="form-1">
+              <div class="input">
+                <label for="Fname">First Name</label>
+                <div class="input-faild">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="Fname" />
+                </div>
+                <span class="error-message" id="fname-error"></span>
+              </div>
+              <div class="input">
+                <label for="Lname">Last Name</label>
+                <div class="input-faild">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="Lname" />
+                </div>
+                <span class="error-message" id="lname-error"></span>
+              </div>
+              <input type="submit" value="Next" class="btn" id="page_one_btn" />
+            </form>
+          </div>
+          <div class="page-2">
+            <div class="header">
+              <div class="circles">
+                <div class="circle line-1">
+                  <span class="one">Name</span>
+                  <span
+                    style="background-color: green; outline: green"
+                    class="two done"
+                    >1</span
+                  >
+                </div>
+                <div class="circle line-2">
+                  <span class="one">Email</span>
+                  <span class="two">2</span>
+                </div>
+                <div class="circle">
+                  <span class="one">Password</span>
+                  <span class="two">3</span>
+                </div>
+              </div>
+            </div>
+            <form action="#" id="form-2">
+              <div class="input">
+                <label for="email">Email</label>
+                <div class="input-faild">
+                  <i class="bx bxs-envelope"></i>
+                  <input type="email" id="email" />
+                </div>
+                <span class="error-message" id="email-error"></span>
+              </div>
+              <div class="input">
+                <label for="image">image</label>
+                <div class="input-faild">
+                  <i class="bx bxs-image"></i>
+                  <input type="file" id="image" />
+                </div>
+                <span class="error-message" id="image-error"></span>
+              </div>
+              <div class="buttons">
+                <input
+                  type="submit"
+                  value="NEXt"
+                  class="btn"
+                  id="page_two_btn"
+                />
+                <input
+                  type="submit"
+                  value="PREVIOUS"
+                  class="btn"
+                  id="page_two_pre"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="page-3">
+            <div class="header">
+              <div class="circles">
+                <div class="circle line-1">
+                  <span class="one">Name</span>
+                  <span
+                    style="background-color: green; outline: green"
+                    class="two"
+                    >1</span
+                  >
+                </div>
+                <div class="circle line-2">
+                  <span class="one">Email</span>
+                  <span
+                    style="background-color: green; outline: green"
+                    class="two"
+                    >2</span
+                  >
+                </div>
+                <div class="circle">
+                  <span class="one">Password</span>
+                  <span class="two">3</span>
+                </div>
+              </div>
+            </div>
+            <form action="#" id="form-3">
+              <div class="input">
+                <label for="password">Password</label>
+                <div class="input-faild">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="password" />
+                </div>
+                <span class="error-message" id="password-error"></span>
+              </div>
+              <div class="input">
+                <label for="re-password">Re-enter Password</label>
+                <div class="input-faild">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" id="re-password" />
+                </div>
+                <span class="error-message" id="re-password-error"></span>
+              </div>
+              <div class="buttons">
+                <input
+                  type="submit"
+                  value="REGISTER"
+                  class="btn"
+                  id="regester"
+                />
+                <input
+                  type="submit"
+                  value="PREVIOUS"
+                  class="btn"
+                  id="page_three_pre"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="page-4">
+            <form action="../Exam/Exam.html" id="form-4">
+              <div class="input">
+                <i class="fas fa-user"></i>
+                <label for="email">Email</label>
+                <div class="input-faild">
+                  <input type="text" id="email-log" />
+                </div>
+                <span class="error-message" id="email-error-log"></span>
+              </div>
+              <div class="input">
+                <i class="fas fa-lock"></i>
+                <label for="password">Password</label>
+                <div class="input-faild">
+                  <input type="password" id="password-log" />
+                </div>
+                <span class="error-message" id="password-error-log"></span>
+              </div>
+              <input
+                type="submit"
+                value="LOG IN NOW"
+                class="btn"
+                id="page_four_btn"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="panels-container">
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Hello Friend!</h3>
+            <p>
+              Welcome to the Exam platform, please log in if you are a registered student.
+            </p>
+            <input type="submit" value="LOG IN" class="btn" id="login-btn" />
+          </div>
+        </div>
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Welcome Back !</h3>
+            <p>
+              Welcome to the Exam platform, please register if you are a new student.
+            </p>
+            <input type="submit" value="REGISTER" class="btn" id="signup-btn" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="image">
+      <img
+        src="./image/WhatsApp Image 2024-09-03 at 02.53.27_a59301d3.jpg"
+        alt=""
+      />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
